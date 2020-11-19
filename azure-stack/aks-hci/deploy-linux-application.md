@@ -9,6 +9,7 @@ ms.reviewer:
 ---
 
 # Tutorial: Deploy Linux applications in Azure Kubernetes Service on Azure Stack HCI
+> Applies to: AKS on Azure Stack HCI, AKS runtime on Windows Server 2019 Datacenter
 
 In this tutorial, you deploy a multi-container application that includes a web front end and a Redis database instance in your Azure Kubernetes Service on Azure Stack HCI cluster. You then see how to test and scale your application. 
 
