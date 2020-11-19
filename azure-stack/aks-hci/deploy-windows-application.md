@@ -9,8 +9,9 @@ ms.reviewer:
 ---
 
 # Tutorial: Deploy Windows applications in Azure Kubernetes Service on Azure Stack HCI
+> Applies to: AKS on Azure Stack HCI, AKS runtime on Windows Server 2019 Datacenter
 
-In this tutorial, you deploy an ASP.NET sample application in a Windows Server container to the Kubernetes cluster. You then see how to test and scale your application. 
+In this tutorial, you deploy an ASP.NET sample application in a Windows Server container to the Kubernetes cluster and learn how to test and scale your application. You will also learn how to join a Windows nodes to an Active Directory domain.
 This tutorial assumes a basic understanding of Kubernetes concepts. For more information, see [Kubernetes core concepts for Azure Kubernetes Service on Azure Stack HCI](kubernetes-concepts.md).
 
 ## Before you begin
@@ -168,4 +169,4 @@ For more information on Windows container with gMSA, refer [Windows containers a
 ## Next steps
 
 * [Use Azure Monitor to monitor your cluster and application](/azure/azure-monitor/insights/container-insights-enable-arc-enabled-clusters).
-* [Use persistent storage on a Kubernetes cluster](persistent-storage.md).
+* [Use persistent volume on a Kubernetes cluster](persistent-volume.md).
