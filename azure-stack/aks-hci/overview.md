@@ -8,8 +8,9 @@ ms.date: 09/22/2020
 #Customer intent: As an IT Pro, I want AKS on Azure Stack HCI so that I can easily deploy Kubernetes on-premises to orchestrate my containerized workloads.
 ---
 # What is Azure Kubernetes Service on Azure Stack HCI?
+> Applies to: AKS on Azure Stack HCI, AKS runtime Windows Server 2019 Datacenter
 
-Azure Kubernetes Service on Azure Stack HCI is an on-premises implementation of Azure Kubernetes Service (AKS), which automates running containerized applications at scale. Azure Kubernetes Service is now in preview on Azure Stack HCI and Windows Server 2019 Datacenter, making it quicker to get started hosting Linux and Windows containers in your datacenter.
+Azure Kubernetes Service on Azure Stack HCI is an on-premises implementation of Azure Kubernetes Service (AKS), which automates running containerized applications at scale. Azure Kubernetes Service is now in preview on Azure Stack HCI and as Azure Kubernetes Service runtime on Windows Server 2019 Datacenter, making it quicker to get started hosting Linux and Windows containers in your datacenter.
 
 To get started with Azure Kubernetes Service on-premises, [register for the preview](https://aka.ms/AKS-HCI-Evaluate) (there's no added cost during preview), then see [Set up Azure Kubernetes Service on Azure Stack HCI](setup.md). To instead use Azure Kubernetes Service to orchestrate your cloud-based containers, see [Azure Kubernetes Service in Azure](/azure/aks/intro-kubernetes).
 
@@ -44,7 +45,7 @@ Azure Kubernetes Service simplifies the process of setting up Kubernetes on Azur
 
 Once you've set up Azure Kubernetes Service on-premise and created a Kubernetes cluster, we provide a couple ways to manage and monitor your Kubernetes infrastructure:
 
-- **On-premises using popular tools like Kubectl and Kubernetes dashboard** - use an open-source web-based interface to deploy applications to a Kubernetes cluster, manage cluster resources, troubleshoot, and view running applications.
+- **On-premises using popular tools like Kubectl and Kubernetes dashboard** - use an open-source web-based interface to deploy applications to a Kubernetes cluster, manage cluster resources, troubleshoot, and view running applications. We also provide a dashboard to monitor your deployment through Windows Admin Center.
 - **In the Azure portal using Azure Arc** - use Azure Arc to manage applications deployed on top of Kubernetes clusters across your cloud and on-premises environments. 
 <br>Azure Arc also enables you to manage your Kubernetes clusters with other Azure services including:
 
