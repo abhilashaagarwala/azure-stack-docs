@@ -10,7 +10,7 @@ ms.date: 09/22/2020
 
 > Applies to: Azure Stack HCI, Windows Server 2019 Datacenter
 
-This article covers the requirements for setting up Azure Kubernetes Service on Azure Stack HCI or on Windows Server 2019 Datacenter and using it to create Kubernetes clusters. For an overview of Azure Kubernetes Service on Azure Stack HCI, see [AKS on Azure Stack HCI overview](overview.md). 
+This article covers the requirements for setting up Azure Kubernetes Service on Azure Stack HCI or Azure Kubernetes Service runtime on Windows Server 2019 Datacenter and using it to create Kubernetes clusters. For an overview of Azure Kubernetes Service on Azure Stack HCI, see [AKS on Azure Stack HCI overview](overview.md). 
 
 ## Determine hardware requirements
 
@@ -56,10 +56,10 @@ The following requirements apply to an Azure Stack HCI cluster as well as a Wind
  
  - DNS name resolution is required for all nodes to be able to communicate with each other. For Kubernetes external name resolution, we use the DNS servers provided by the DHCP server when the IP address is obtained. For Kubernetes internal name resolution, we use the default Kubernetes core DNS based solution. 
  
- - For this preview release, we only provide single VLAN support for the entire deployment.
+ - For this preview release, we only provide single VLAN support for a PowerShell based deployment.
 
- - For this preview release, we have proxy support thats limited to the following scenarios:
-
+ - For this preview release, we have limited proxy support for clusters created through PowerShell. 
+ 
 ### Network port and URL requirements 
 
 When creating an Azure Kubernetes Cluster on Azure Stack HCI, we will automatically open the following firewall ports on each server in the cluster. 
@@ -111,7 +111,7 @@ Windows Admin Center is the user interface for creating and managing Azure Kuber
 
 Your machine running the Windows Admin Center gateway has the following requirements:
 
-- A Windows 10 or Windows Server machine (we don't support running Windows Admin Center on the Azure Stack HCI or Windows Server 2019 Datacenter cluster right now)
+- A Windows 10 or Windows Server machine (we don't support running Windows Admin Center directly on top of the Azure Stack HCI or Windows Server 2019 Datacenter cluster right now)
 - 60 GB of free space
 - Registered with Azure
 - In the same domain as the Azure Stack HCI or Windows Server 2019 Datacenter cluster
