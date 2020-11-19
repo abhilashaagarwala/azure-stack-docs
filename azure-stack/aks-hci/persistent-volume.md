@@ -1,6 +1,6 @@
 ---
-title: Use persistent storage in a Kubernetes cluster
-description: Use persistent storage in a Kubernetes cluster 
+title: Use persistent volume in a Kubernetes cluster
+description: Use persistent volume in a Kubernetes cluster 
 author: abha
 ms.topic: how-to
 ms.date: 09/21/2020
@@ -8,9 +8,10 @@ ms.author: abha
 ms.reviewer: 
 ---
 
-# Use persistent storage in a Kubernetes 
+# Use persistent volume in a Kubernetes 
+> Applies to: AKS on Azure Stack HCI, AKS runtime on Windows Server 2019 Datacenter
 
-A persistent volume represents a piece of storage that has been provisioned for use with Kubernetes pods. A persistent volume can be used by one or more pods and is meant for long-term storage. It's also independent of pod or node lifecycle.  In this section, you'll see how to create a persistent volume and how to use this volume in a Windows application.
+A persistent volume represents a piece of storage that has been provisioned for use with Kubernetes pods. A persistent volume can be used by one or more pods and is meant for long-term storage. It's also independent of pod or node lifecycle. In this section, you'll see how to create a persistent volume and how to use this volume in a Windows application. For more information, visit (persistent volumes in Kubernetes)[https://kubernetes.io/docs/concepts/storage/persistent-volumes/].
 
 ## Before you begin
 
