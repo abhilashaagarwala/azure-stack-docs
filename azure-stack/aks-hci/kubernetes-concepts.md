@@ -8,7 +8,7 @@ ms.date: 09/14/2020
 ---
 
 # Kubernetes core concepts for Azure Kubernetes Service on Azure Stack HCI
-> Applies to: AKS on Azure Stack HCI, AKS runtime Windows Server 2019 Datacenter
+> Applies to: AKS on Azure Stack HCI, AKS runtime on Windows Server 2019 Datacenter
 
 Azure Kubernetes Service on Azure Stack HCI is an enterprise-grade Kubernetes container platform powered by Azure Stack HCI. The product also runs on Windows Server 2019 Datacenter as Azure Kubernetes Service runtime. It includes Microsoft supported core Kubernetes, add-ons, a purpose-built Windows container host and a Microsoft-supported Linux container host with a goal to have a **simple deployment and life cycle management experience**.
 
