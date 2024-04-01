@@ -1,11 +1,11 @@
 ---
 title: Deploy Kubernetes to use Azure Stack Hub containers 
 description: Learn how to deploy Kubernetes to use containers with Azure Stack Hub.
-author: mattbriggs
+author: sethmanheim
 
 ms.topic: article
 ms.date: 2/1/2021
-ms.author: mabrigg
+ms.author: sethm
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
 
@@ -38,8 +38,8 @@ You'll only be charged for the compute usage required by the nodes supporting yo
 
 The steps to deploy a Kubernetes cluster on Azure Stack Hub will depend on your identity management service. Verify the identity management solution used by your installation of Azure Stack Hub. Contact your Azure Stack Hub administrator to verify your identity management service.
 
-- **Azure Active Directory (Azure AD)**  
-For instructions on installing the cluster when using Azure AD, see [Deploy Kubernetes to Azure Stack Hub using Azure Active Directory (Azure AD)](azure-stack-solution-template-kubernetes-azuread.md).
+- **Microsoft Entra ID**  
+For instructions on installing the cluster when using Microsoft Entra ID, see [Deploy Kubernetes to Azure Stack Hub using Microsoft Entra ID](azure-stack-solution-template-kubernetes-azuread.md).
 
 - **Active Directory Federated Services (AD FS)**  
 For instructions on installing the cluster when using AD FS, see [Deploy Kubernetes to Azure Stack Hub using Active Directory Federated Services (AD FS)](azure-stack-solution-template-kubernetes-adfs.md).
@@ -56,7 +56,7 @@ You may also find the **Helm** package manager useful for installing and deployi
 
 [Add a Kubernetes to the Marketplace (for the Azure Stack Hub operator)](../operator/azure-stack-solution-template-kubernetes-cluster-add.md)
 
-[Deploy Kubernetes to Azure Stack Hub using Azure Active Directory (Azure AD)](azure-stack-solution-template-kubernetes-azuread.md)
+[Deploy Kubernetes to Azure Stack Hub using Microsoft Entra ID](azure-stack-solution-template-kubernetes-azuread.md)
 
 [Deploy Kubernetes to Azure Stack Hub using Active Directory Federated Services (AD FS)](azure-stack-solution-template-kubernetes-adfs.md)
 

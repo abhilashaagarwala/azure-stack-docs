@@ -1,11 +1,11 @@
 ---
 title: Manage resource access in Azure Stack Hub with role-based access control 
 description: Learn how to manage role-based access control (RBAC) permissions as an admin or a tenant in Azure Stack Hub.
-author: bryanla
+author: sethmanheim
 
 ms.topic: article
 ms.date: 09/13/2019
-ms.author: bryanla
+ms.author: sethm
 ms.reviewer: fiseraci
 ms.lastreviewed: 03/11/2019
 
@@ -44,7 +44,7 @@ Azure Stack Hub has the following resource hierarchy:
 
 Access that you grant at a parent scope is inherited at child scopes. For example:
 
-* You assign the **Reader** role to an Azure AD group at the subscription scope. The members of that group can view every resource group and resource in the subscription.
+* You assign the **Reader** role to a Microsoft Entra group at the subscription scope. The members of that group can view every resource group and resource in the subscription.
 * You assign the **Contributor** role to an app at the resource group scope. The app can manage resources of all types in that resource group, but not other resource groups in the subscription.
 
 ### Assigning roles

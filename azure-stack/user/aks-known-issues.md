@@ -1,10 +1,10 @@
 ---
 title: Known issues for the Azure Kubernetes Service on Azure Stack Hub
 description: Learn about working with Azure Kubernetes Service on Azure Stack Hub.
-author: mattbriggs
+author: sethmanheim
 ms.topic: article
-ms.date: 12/8/2021
-ms.author: mabrigg
+ms.date: 02/24/2021
+ms.author: sethm
 ms.reviewer: waltero
 ms.lastreviewed: 12/8/2021
 
@@ -26,9 +26,11 @@ AKS on Hub is on public preview, no production support is offered for this featu
 
 Not all Azure AKS features, APIs, and Azure CLI commands are supported by AKS on Azure Stack Hub, see [the overview article](aks-overview.md). and the table of [supported commands](aks-commands.md). You can use the Azure documentation, but you should be mindful of the limitations on Azure Stack Hub.
 
-### Can I use Azure AD or AD FS integrated with my AKS clusters?
+<a name='can-i-use-azure-ad-or-ad-fs-integrated-with-my-aks-clusters'></a>
 
-There is no support for Azure Active Director (Azure AD) and Active Directory Federated Services (AD FS) Kubernetes authorization and RBAC integration in the public preview. 
+### Can I use Microsoft Entra ID or AD FS integrated with my AKS clusters?
+
+There is no support for Azure Active Director (Microsoft Entra ID) and Active Directory Federated Services (AD FS) Kubernetes authorization and RBAC integration in the public preview. 
 
 ### Can I use AKS cluster Autoscaler in AKS on Azure Stack Hub?
 
@@ -42,9 +44,13 @@ Yes, the preview for AKS and Azure Container Registry (ACR) must be uninstalled 
 
 No, you will not need to uninstall AKS or ACR again. These two services are integrated into the infrastructure of Azure Stack Hub, they will be updated, maintained, and monitored and all other infrastructure services.
 
-## Is the service principal automatically created?
+### Is the service principal automatically created?
 
 No. The service principal (SPN) is not automatically created as in Azure (no MSI).
+
+### Are the Azure Container Service (ACR) and Azure Kubernetes Service (AKS) public previews available on the Azure Stack Development Kit (ASDK)?
+
+The Azure Container Service (ACR) and Azure Kubernetes Service (AKS) are not available for the Azure Stack Development Kit (ASDK). You must use a multi-node Azure Stack Hub to use the ACR and AKS while in public preview.
 
 ## Known issues
 

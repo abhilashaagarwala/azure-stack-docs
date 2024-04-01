@@ -1,14 +1,14 @@
 ---
 title: Collect diagnostic data for Azure Stack HCI and Windows Server clusters
 description: Understanding Storage Spaces Direct diagnostic data collection tools, with specific examples of how to run and use them.
-ms.author: adagashe
+ms.author: sethm
 ms.topic: article
-author: adagashe
-ms.date: 08/11/2021
+author: sethmanheim
+ms.date: 02/26/2024
 ---
 # Collect diagnostic data for clusters
 
->Applies to: Azure Stack HCI, versions 21H2 and 20H2; Windows Server 2022, Windows Server 2019, Windows Server 2016
+>Applies to: Azure Stack HCI, versions 22H2 and 21H2; Windows Server 2022, Windows Server 2019, Windows Server 2016
 
 There are various diagnostic tools in Storage Spaces Direct that you can use to collect the data needed to troubleshoot Azure Stack HCI and Windows Server clusters. In this article, we will focus on installing and using SDDC diagnostic tools to gather relevant information to help you diagnose your cluster.
 
@@ -26,15 +26,15 @@ To install SDDC diagnostic tools and begin collecting data, follow these steps:
 
 1. Launch Windows Admin Center and select **Tools > Diagnostics**. If diagnostics tools are not already installed, click the **Install** button.
    
-   :::image type="content" source="media/data-collection/install-diagnostic-tools.png" alt-text="Click Install to install SDDC diagnostic tools." lightbox="media/data-collection/install-diagnostic-tools.png":::
+   :::image type="content" source="media/collect-diagnostic-data/install-diagnostic-tools.png" alt-text="Click Install to install SDDC diagnostic tools." lightbox="media/collect-diagnostic-data/install-diagnostic-tools.png":::
    
 2. To begin collecting diagnostic data, click **Collect**. You should see a message that says "Collecting diagnostic information. This may take a few minutes." After the initial data collection, if you want to automatically collect data every 24 hours, change the slider to **On**.
    
-   :::image type="content" source="media/data-collection/collect-diagnostic-data.png" alt-text="Click Collect to being collecting diagnostic data." lightbox="media/data-collection/collect-diagnostic-data.png":::
+   :::image type="content" source="media/collect-diagnostic-data/collect-diagnostic-data.png" alt-text="Click Collect to being collecting diagnostic data." lightbox="media/collect-diagnostic-data/collect-diagnostic-data.png":::
    
 3. Data collection is not complete until you see the screenshot below. To view collected diagnostic information, choose **Download (.zip)** or **Open in Files tool**.
    
-   :::image type="content" source="media/data-collection/view-diagnostic-information.png" alt-text="To view diagnostic information, you can either download a .zip file or open in Files tool." lightbox="media/data-collection/view-diagnostic-information.png":::
+   :::image type="content" source="media/collect-diagnostic-data/view-diagnostic-information.png" alt-text="To view diagnostic information, you can either download a .zip file or open in Files tool." lightbox="media/collect-diagnostic-data/view-diagnostic-information.png":::
    
 ## Installing Get-SDDCDiagnosticInfo with PowerShell
 
@@ -132,15 +132,15 @@ Get-SddcDiagnosticInfo -ClusterName S2D-Cluster -WriteToPath d:\SDDCDiagTemp
 
 As you can see, the script will also do validation of current cluster state:
 
-![data collection powershell screenshot](media/data-collection/collect-data.png)
+:::image type="content" source="media/collect-diagnostic-data/collect-data.png" alt-text="Data collection PowerShell screenshot." lightbox="media/collect-diagnostic-data/collect-data.png":::
 
 All data is being written to SDDCDiagTemp folder:
 
-![data in file explorer screenshot](media/data-collection/collect-data-folder.png)
+:::image type="content" source="media/collect-diagnostic-data/collect-data-folder.png" alt-text="Data in File Explorer screenshot." lightbox="media/collect-diagnostic-data/collect-data-folder.png":::
 
 After the script finishes, it will create a ZIP in your user directory:
 
-![data zip in powershell screenshot](media/data-collection/collect-data-result.png)
+:::image type="content" source="media/collect-diagnostic-data/collect-data-result.png" alt-text="Data zip in PowerShell screenshot." lightbox="media/collect-diagnostic-data/collect-data-result.png":::
 
 Let's generate a report into a text file:
 
@@ -183,8 +183,8 @@ This report is being continually updated to include more useful information. For
 
 The script runs various log gathering scripts and saves the output as xml files. We collect cluster and health logs, system information (MSInfo32), unfiltered event logs (failover clustering, dis diagnostics, Hyper-V, storage spaces, and more), and storage diagnostics information (operational logs). For the latest information on what information is collected, see the [GitHub README (what we collect)](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/blob/master/README.md#what-does-the-cmdlet-output-include).
 
-## How to consume XML files from Get-PCStorageDiagnosticInfo
-You can consume the data from the XML files provided in data collected by the `Get-PCStorageDiagnosticInfo` cmdlet. These files have information about the virtual disks, physical disks, basic cluster information, and other PowerShell related outputs.
+## How to consume XML files from Get-SDDCDiagnosticInfo
+You can consume the data from the XML files provided in data collected by the `Get-SDDCDiagnosticInfo` cmdlet. These files have information about the virtual disks, physical disks, basic cluster information, and other PowerShell related outputs.
 
 To see the results of these outputs, open a PowerShell window and run the following steps.
 

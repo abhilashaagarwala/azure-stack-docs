@@ -2,10 +2,10 @@
 title: Create subscriptions to offers in Azure Stack Hub.
 titleSuffix: Azure Stack
 description: Learn to create subscriptions for offers in Azure Stack Hub.
-author: bryanla
+author: sethmanheim
 ms.topic: conceptual
 ms.date: 10/05/2019
-ms.author: bryanla
+ms.author: sethm
 ms.lastreviewed: 05/10/2019
 
 # Intent: As an Azure Stack operator, I want to create subscriptions for offers in Azure Stack.
@@ -36,7 +36,7 @@ After you create a subscription for a user, they can sign in to the user portal 
    - **Display name** - A friendly name for identifying the subscription that appears as the *User subscription name*.
    - **User** - Specify a user from an available directory tenant for this subscription. The user name appears as *Owner*.  The format of the user name depends on your identity solution. For example:
 
-     - **Azure AD:** `<user1>@<contoso.onmicrosoft.com>`
+     - **Microsoft Entra ID:** `<user1>@<contoso.onmicrosoft.com>`
 
      - **AD FS:** `<user1>@<azurestack.local>`
 

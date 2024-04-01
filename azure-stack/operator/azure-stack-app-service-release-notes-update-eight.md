@@ -1,5 +1,5 @@
 ---
-title: App Service on Azure Stack Hub update 8 release notes 
+title: App Service on Azure Stack Hub update 8 release notes
 description: Update 8 release notes for App Service on Azure Stack Hub, including new features, fixes, and known issues.
 author: apwestgarth
 manager: stefsch
@@ -8,12 +8,10 @@ ms.date: 11/17/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/25/2019
-ms.custom: contperf-fy22q1
 ROBOTS: NOINDEX
 
 # Intent: As an Azure Stack Hub operator, I want the release notes for update 8 of App Service on Azure Stack Hub so I can know the new features, fixes, and known issues.
 # Keyword: app service azure stack hub update 8 release notes
-
 ---
 
 # App Service on Azure Stack Hub update 8 release notes
@@ -93,7 +91,7 @@ All new deployments of Azure App Service on Azure Stack Hub will make use of man
 
 - Upgrade fails if SQL Server Always On Cluster has failed over to secondary node.
 
-During upgrade, there's a call to check database existence using the master connection string that fails because the login was on the previous master node.
+During upgrade, there's a call to check database existence using the master connection string that fails because the login was on the previous control plane node.
 
 Take one of the following actions and select retry within the installer.
 

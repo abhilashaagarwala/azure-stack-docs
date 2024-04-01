@@ -2,11 +2,11 @@
 title: Add Kubernetes to Azure Stack Hub Marketplace
 titleSuffix: Azure Stack Hub
 description: Learn how to add Kubernetes to Azure Stack Hub Marketplace.
-author: mattbriggs
+author: sethmanheim
 
 ms.topic: article
 ms.date: 2/1/2021
-ms.author: mabrigg
+ms.author: sethm
 ms.reviewer: waltero
 ms.lastreviewed: 03/24/2020v
 
@@ -45,11 +45,11 @@ Create a plan, an offer, and a subscription for the Kubernetes marketplace item.
 
     a. Enter a **Display Name**.
 
-    b. Enter a **User**. Use the Azure AD account associated with your tenant.
+    b. Enter a **User**. Use the Microsoft Entra account associated with your tenant.
 
     c. **Provider Description**
 
-    d. Set the **Directory tenant** to the Azure AD tenant for your Azure Stack Hub. 
+    d. Set the **Directory tenant** to the Microsoft Entra tenant for your Azure Stack Hub. 
 
     e. Select **Offer**. Select the name of the offer that you created. Make note of the Subscription ID.
 

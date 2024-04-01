@@ -6,12 +6,11 @@ ms.author: anpaul
 ms.topic: overview
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.custom: contperf-fy22q1
-ms.date: 09/13/2021
+ms.date: 02/22/2024
 ---
 # What is Software Load Balancer \(SLB\) for SDN?
 
-> Applies to: Azure Stack HCI, versions 21H2 and 20H2; Windows Server 2022, Windows Server 2019, Windows Server 2016
+> Applies to: Azure Stack HCI, versions 22H2 and 21H2; Windows Server 2022, Windows Server 2019, Windows Server 2016
 
 Cloud Service Providers (CSPs) and enterprises that are deploying [Software Defined Networking (SDN)](software-defined-networking.md) can use Software Load Balancer (SLB) to evenly distribute tenant and tenant customer network traffic among virtual network resources. SLB enables multiple servers to host the same workload, providing high availability and scalability.
 
@@ -90,7 +89,7 @@ In the following illustration, a client computer performs a DNS query for the IP
 
 9. The host forwards the packet directly to the default gateway for the physical network which uses its standard routing table to forward the packet on to the client, which eventually receives the response.
 
-:::image type="content" source="media/software-load-balancing/slb-process.jpg" alt-text="Software Load Balancing process" border="false":::
+:::image type="content" source="media/software-load-balancer/slb-process.jpg" alt-text="Software Load Balancing process." border="false" lightbox="media/software-load-balancer/slb-process.jpg":::
 
 ### Load balancing internal datacenter traffic
 
@@ -115,7 +114,7 @@ In addition, you must configure the Azure Stack HCI hosts with the SDN-enabled H
 
 The following figure provides an overview of the SLB infrastructure.
 
-:::image type="content" source="media/software-load-balancing/slb-overview.png" alt-text="Software Load Balancer infrastructure" border="false":::
+:::image type="content" source="media/software-load-balancer/slb-overview.png" alt-text="Software Load Balancer infrastructure." lightbox="media/software-load-balancer/slb-overview.png":::
 
 The following sections provide more information about these elements of the Software Load Balancer infrastructure.
 
@@ -205,4 +204,4 @@ For related information, see also:
 
 - [Manage Software Load Balancer for SDN](../manage/load-balancers.md)
 - [SDN in Azure Stack HCI and Windows Server](software-defined-networking.md)
-- [Learn module: Implement Datacenter Firewall and Software Load Balancer on Azure Stack HCI](/learn/modules/implement-firewall-load-balancer/)
+- [Learn module: Implement Datacenter Firewall and Software Load Balancer on Azure Stack HCI](/training/modules/implement-firewall-load-balancer/)

@@ -1,10 +1,10 @@
 ---
 title: Azure Kubernetes Service on Azure Stack Hub overview for users
 description: Learn about Azure Kubernetes Service (ASK) on Azure Stack Hub overview for users.
-author: mattbriggs
+author: sethmanheim
 ms.topic: article
 ms.date: 10/26/2021
-ms.author: mabrigg
+ms.author: sethm
 ms.reviewer: waltero
 ms.lastreviewed: 10/26/2021
 
@@ -19,7 +19,7 @@ Azure Kubernetes Service (AKS) makes it simple to deploy a Kubernetes cluster in
 As a managed Kubernetes service, Azure Stack Hub handles critical tasks like health monitoring and facilitates maintenance for you. The Azure Stack team manages the image used for maintaining the clusters. The cluster administrator will only need to apply the updates as needed. The services come at no extra cost. AKS is free: you only pay to use the VMs (master and agent nodes) within your clusters. It is simpler to use than [AKS engine](azure-stack-kubernetes-aks-engine-overview.md) since it removes some of the manual tasks required with AKS engine.
 
 > [!IMPORTANT]
-> Azure Kubernetes Service on Azure Stack Hub is currently in PREVIEW.
+> Azure Kubernetes Service on Azure Stack Hub, currently in preview, is being discontinued and will not become GA. See [AKS Engine](../user/azure-stack-kubernetes-aks-engine-overview.md) for a Kubernetes solution on Azure Stack Hub. 
 > See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 
@@ -56,7 +56,7 @@ The following table provides an overview of features of AKS in global Azure comp
 | Access Security              |                                                     |           |         |
 |                              | Kubernetes RBAC                                     | Yes       | Yes     |
 |                              | Security Center Integration                         | Yes       | Yes     |
-|                              | Azure AD Auth/RBAC                                  | Yes       | No      |
+|                              | Microsoft Entra auth/RBAC                                  | Yes       | No      |
 |                              | Calico Network Policy                               | Yes       | No      |
 | Monitoring & Logging         |                                                     |           |         |
 |                              | Integrated Azure Monitoring (Insights, Logs, Metrics, Alerts) | Yes       | No     |
@@ -111,11 +111,11 @@ In both scenarios, Azure Stack Hub is under the control of the customer. Also, c
 
 ### Connect to Azure Stack Hub using the CLI or PowerShell
 
-When you use the Azure CLI to connect to Azure, the CLI binary will default to using Azure Active Directory (Azure AD) for authentication and the global Azure Resource Manager endpoint for APIs. You can use also use Azure CLI with Azure Stack Hub. However, you will need to explicitly connect to the Azure Stack Hub Azure Resource Manager endpoint and use either Azure AD or Active Directory Federated Services (AD FS) for authentication. The reason is that Azure Stack Hub is meant to work within enterprises, and they may choose AD FS in disconnected scenarios.
+When you use the Azure CLI to connect to Azure, the CLI binary will default to using Microsoft Entra ID for authentication and the global Azure Resource Manager endpoint for APIs. You can use also use Azure CLI with Azure Stack Hub. However, you will need to explicitly connect to the Azure Stack Hub Azure Resource Manager endpoint and use either Microsoft Entra ID or Active Directory Federated Services (AD FS) for authentication. The reason is that Azure Stack Hub is meant to work within enterprises, and they may choose AD FS in disconnected scenarios.
 
-1.  For information on how to connect to Azure Stack Hub using either Azure AD or AD FS identities using PowerShell, see [Connect to Azure Stack Hub with PowerShell as a user](azure-stack-powershell-configure-user.md).
+1.  For information on how to connect to Azure Stack Hub using either Microsoft Entra ID or AD FS identities using PowerShell, see [Connect to Azure Stack Hub with PowerShell as a user](azure-stack-powershell-configure-user.md).
 
-2.  Use [this](azure-stack-version-profiles-azurecli2.md) one for connecting using Azure CLI with either Azure AD or AD FS identities.
+2.  Use [this](azure-stack-version-profiles-azurecli2.md) one for connecting using Azure CLI with either Microsoft Entra ID or AD FS identities.
 
 ### Supported platform features
 
@@ -127,7 +127,7 @@ Azure Stack Hub supports a subset of the features available in global Azure. Tak
     * No parameter enable-private-cluster </azure/aks/private-clusters>
     * No cluster autoscaler: </azure/aks/cluster-autoscaler>
     * No parameter enable-cluster-autoscaler
-    * [az aks update](/cli/azure/aks?view=azure-cli-latest#az_aks_update) not available.
+    * [az aks update](/cli/azure/aks#az-aks-update) not available.
     * No multiple node-pool support. The node pool commands are not available.
     * UI support for multi-node-pool operations is not enabled.
  - No Azure Regions or Availability Zones
@@ -156,12 +156,14 @@ Given the differences between the two platforms outlined above, the user should 
 | `--load-balancer-sku basic`             | Azure Stack Hub does not support standard load balancer (SLB) yet. |
 | `--location`                            | The location value is specific to the customer's chosen one. |
 
-### Service principals can be provided by Azure AD or AD FS
+<a name='service-principals-can-be-provided-by-azure-ad-or-ad-fs'></a>
 
-Service principals (SPN) are a requirement for creating and managing an AKS cluster. Since Azure Stack Hub can be deployed in disconnected mode from the internet, it must have available an alternative Identity manager to Azure Active Directory (Azure AD), therefore Active Directory Federated Services (AD FS) is used. How Azure Stack Hub tenants create SPNs is documented here:
- - [Azure AD SPN](../operator/give-app-access-to-resources.md?tabs=az1%2Caz2&pivots=state-connected#overview)
- - [AD FS SPN](../operator/give-app-access-to-resources.md?tabs=az1%2Caz2&pivots=state-disconnected#create-app-registration-client-secret-adfs)
+### Service principals can be provided by Microsoft Entra ID or AD FS
 
+Service principals (SPN) are a requirement for creating and managing an AKS cluster. Since Azure Stack Hub can be deployed in disconnected mode from the internet, it must have available an alternative Identity manager to Microsoft Entra ID, therefore Active Directory Federated Services (AD FS) is used. How Azure Stack Hub tenants create SPNs is documented here:
+
+- [Microsoft Entra SPN](../operator/give-app-access-to-resources.md?tabs=az1&az2&pivots=state-connected#overview)
+- [AD FS SPN](../operator/give-app-access-to-resources.md?tabs=az1&az2&pivots=state-disconnected#create-app-registration-client-secret-adfs)
 
 ## Next steps
 

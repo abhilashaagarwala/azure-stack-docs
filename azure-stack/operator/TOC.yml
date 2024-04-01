@@ -13,11 +13,65 @@
     - name: Release notes
       href: release-notes.md
     - name: Hotfixes
-      items:   
+      items:
+      - name: Hotfix 1.2311.2.23
+        href: hotfix-1-2311-2-23.md
+      - name: Hotfix 1.2306.4.74
+        href: hotfix-1-2306-4-74.md      
+      - name: Hotfix 1.2301.3.72
+        href: hotfix-1-2301-3-72.md
+      - name: Hotfix 1.2306.4.73
+        href: hotfix-1-2306-4-73.md      
+      - name: Hotfix 1.2206.2.77
+        href: hotfix-1-2206-2-77.md      
+      - name: Hotfix 1.2301.2.64
+        href: hotfix-1-2301-2-64.md
+      - name: Hotfix 1.2206.2.76
+        href: hotfix-1-2206-2-76.md      
+      - name: Hotfix 1.2301.2.63
+        href: hotfix-1-2301-2-63.md
+      - name: Hotfix 1.2301.2.60
+        href: hotfix-1-2301-2-60.md
+      - name: Hotfix 1.2206.2.66
+        href: hotfix-1-2206-2-66.md
+      - name: Hotfix 1.2108.2.130
+        href: hotfix-1-2108-2-130.md            
+      - name: Hotfix 1.2102.31.153
+        href: hotfix-1-2102-31-153.md      
+      - name: Hotfix 1.2206.2.52
+        href: hotfix-1-2206-2-52.md      
+      - name: Hotfix 1.2108.2.127
+        href: hotfix-1-2108-2-127.md            
+      - name: Hotfix 1.2102.31.152
+        href: hotfix-1-2102-31-152.md      
+      - name: Hotfix 1.2206.2.38
+        href: hotfix-1-2206-2-38.md   
+      - name: Hotfix 1.2108.2.113
+        href: hotfix-1-2108-2-113.md      
+      - name: Hotfix 1.2102.30.148
+        href: hotfix-1-2102-30-148.md      
+      - name: Hotfix 1.2206.1.25
+        href: hotfix-1-2206-1-25.md      
+      - name: Hotfix 1.2206.1.24
+        href: hotfix-1-2206-1-24.md
+      - name: Hotfix 1.2108.2.111
+        href: hotfix-1-2108-2-111.md      
+      - name: Hotfix 1.2102.30.146
+        href: hotfix-1-2102-30-146.md      
+      - name: Hotfix 1.2008.41.161
+        href: hotfix-1-2008-41-161.md
+      - name: Hotfix 1.2108.2.102
+        href: hotfix-1-2108-2-102.md
+      - name: Hotfix 1.2102.30.132
+        href: hotfix-1-2102-30-132.md
+      - name: Hotfix 1.2008.41.159
+        href: hotfix-1-2008-41-159.md
+      - name: Hotfix 1.2108.2.83
+        href: hotfix-1-2108-2-83.md
       - name: Hotfix 1.2102.30.118
-        href: hotfix-1-2102-30-118.md      
+        href: hotfix-1-2102-30-118.md              
       - name: Hotfix 1.2008.40.156
-        href: hotfix-1-2008-40-156.md
+        href: hotfix-1-2008-40-156.md        
       - name: Hotfix 1.2102.30.116
         href: hotfix-1-2102-30-116.md
       - name: Hotfix 1.2102.30.109
@@ -82,6 +136,28 @@
         href: hotfix-1-2005-29-100.md
     - name: Known issues
       href: known-issues.md
+  - name: Manage updates
+    items:
+    - name: Manage updates overview
+      href: azure-stack-updates.md
+    - name: Updates and servicing policy
+      href: azure-stack-servicing-policy.md
+    - name: Checklist for applying updates
+      href: release-notes-checklist.md
+    - name: Prepare the update package
+      href: azure-stack-update-prepare-package.md
+    - name: Apply updates
+      items:
+      - name: Apply updates
+        href: azure-stack-apply-updates.md
+      - name: Apply OEM updates
+        href: azure-stack-update-oem.md
+    - name: Monitor update status
+      items:
+      - name: Use PowerShell
+        href: azure-stack-update-monitor.md
+      - name: Use privileged endpoint
+        href: azure-stack-monitor-update.md
 - name: Quickstarts
   expanded: true
   items:
@@ -208,6 +284,8 @@
       href: azure-stack-connect-expressroute.md  
     - name: Enable CLI for users
       href: azure-stack-cli-admin.md
+    - name: VPN Fast Path
+      href: azure-stack-vpn-fast-path-operators.md
     - name: Set up management environment
       items:
       - name: Install PowerShell Az
@@ -222,28 +300,6 @@
         href: azure-stack-powershell-configure-admin.md
     - name: Access privileged endpoint
       href: azure-stack-privileged-endpoint.md
-    - name: Manage updates
-      items:
-      - name: Manage updates overview
-        href: azure-stack-updates.md
-      - name: Updates and servicing policy
-        href: azure-stack-servicing-policy.md
-      - name: Checklist for applying updates
-        href: release-notes-checklist.md
-      - name: Prepare the update package
-        href: azure-stack-update-prepare-package.md
-      - name: Apply updates
-        items:
-        - name: Apply updates
-          href: azure-stack-apply-updates.md
-        - name: Apply OEM updates
-          href: azure-stack-update-oem.md
-      - name: Monitor update status
-        items:
-        - name: Use PowerShell
-          href: azure-stack-update-monitor.md
-        - name: Use privileged endpoint
-          href: azure-stack-monitor-update.md
     - name: Monitor health and alerts
       href: azure-stack-monitor-health.md
     - name: Monitor hardware components
@@ -254,6 +310,8 @@
       href: azure-stack-change-subscription-owner.md
     - name: Start and stop Azure Stack Hub
       href: azure-stack-start-and-stop.md
+    - name: Decommission an Azure Stack Hub system
+      href: azure-stack-hub-decommission.md
     - name: Azure Site Recovery tool
       href: site-recovery-failback.md
     - name: Manage capacity
@@ -296,7 +354,7 @@
         href: azure-stack-identity-architecture.md
       - name: Manage RBAC
         href: azure-stack-manage-permissions.md
-      - name: Add users for Azure AD
+      - name: Add users for Microsoft Entra ID
         href: azure-stack-add-new-user-aad.md
       - name: Add users for AD FS
         href: azure-stack-add-users-adfs.md
@@ -394,14 +452,20 @@
           href: app-service-recover.md
         - name: Remove App Service
           href: app-service-remove.md
+        - name: Migrate File Server
+          href: app-service-migrate-file-server.md
+        - name: Migrate SQL Server
+          href: app-service-migrate-sql-server.md
       - name: Release notes
         items:
+        - name: 2302 release notes [February 2023]
+          href: app-service-release-notes-2302.md
+        - name: 2022 H1 release notes [October 2022]
+          href: app-service-release-notes-2022-h1.md
         - name: 2021 Q3 release notes [December 2021]
           href: app-service-release-notes-2021-Q3.md
         - name: 2021 Q1 release notes [June 2021]
           href: app-service-release-notes-2021-Q1.md
-        - name: 2020 Q3 release notes [September 2020]
-          href: app-service-release-notes-2020-Q3.md
     - name: Azure Container Registry
       items:
       - name: Overview
@@ -414,6 +478,24 @@
         href: container-registries-troubleshoot.md
     - name: Azure Kubernetes Service
       href: aks-add-on.md
+    - name: Azure Site Recovery
+      items:
+      - name: Overview
+        href: azure-site-recovery-overview.md
+      - name: Deploy
+        items:
+        - name: Deployment overview
+          href: site-recovery-deploy.md
+        - name: Deploy source environment
+          href: site-recovery-deploy-source.md
+        - name: Deploy target environment
+          href: site-recovery-deploy-target.md        
+      - name: Protect virtual machines
+        href: protect-virtual-machines.md
+      - name: Capacity planning
+        href: azure-site-recovery-capacity-planning.md
+      - name: Known issues
+        href: azure-site-recovery-known-issues.md
     - name: Event Hubs on Azure Stack Hub
       items:
       - name: Overview
@@ -428,7 +510,7 @@
         items:
         - name: Apply updates
           href: resource-provider-apply-updates.md
-        - name: Backup & restore
+        - name: Back up and restore
           href: azure-stack-backup-enable-backup-console.md
         - name: Collect logs
           href: diagnostic-log-collection.md
@@ -442,6 +524,14 @@
           href: https://techcommunity.microsoft.com/t5/Event-Hubs-Blog/bg-p/EventHubs
       - name: Release notes
         items:
+        - name: 1.2102.5.0 release notes [Mar 2024] 
+          href: event-hubs-rp-release-1-2102-50.md
+        - name: 1.2102.4.0 release notes [Oct 2023] 
+          href: event-hubs-rp-release-1-2102-40.md
+        - name: 1.2102.3.0 release notes [Jan 2023] 
+          href: event-hubs-rp-release-1-2102-30.md
+        - name: 1.2102.2.0 release notes [Mar 2022] 
+          href: event-hubs-rp-release-1-2102-20.md        
         - name: 1.2102.1.0 release notes [Oct 2021] 
           href: event-hubs-rp-release-1-2102-10.md
         - name: 1.2102.0.0 release notes [Jul 2021] 
@@ -482,12 +572,10 @@
         href: azure-stack-mysql-resource-provider-remove.md
       - name: MySQL resource provider release notes
         items:
+        - name: MySQL resource provider 2.0.13.0 release notes
+          href: azure-stack-mysql-resource-provider-2-0-13.md
         - name: MySQL resource provider 2.0.00.0 release notes
           href: azure-stack-mysql-resource-provider-20000.md
-        - name: MySQL resource provider 1.1.93.0 release notes
-          href: azure-stack-mysql-resource-provider-11930.md
-        - name: MySQL resource provider 1.1.47.0 release notes
-          href: azure-stack-mysql-resource-provider-11470.md
     - name: SQL on Azure Stack Hub
       items:
       - name: Overview
@@ -508,12 +596,10 @@
         href: azure-stack-sql-resource-provider-remove.md 
       - name: SQL resource provider release notes
         items:
+        - name: SQL resource provider 2.0.13.0 release notes
+          href: azure-stack-sql-resource-provider-2-0-13.md 
         - name: SQL resource provider 2.0.00.0 release notes
           href: azure-stack-sql-resource-provider-20000.md 
-        - name: SQL resource provider 1.1.93.0 release notes
-          href: azure-stack-sql-resource-provider-11930.md   
-        - name: SQL resource provider 1.1.47.0 release notes
-          href: azure-stack-sql-resource-provider-11470.md   
   - name: Usage and billing
     href: azure-stack-billing-and-chargeback.md
     items:
@@ -585,13 +671,13 @@
 - name: Reference
   items:
   - name: Azure Stack Hub PowerShell
-    href: /powershell/azure/azure-stack/overview
+    href: /powershell/azurestackhub/overview
   - name: Azure Stack Hub privileged endpoint
     href: ../reference/pep/    
   - name: Azure Stack Hub administrator REST APIs
     href: /rest/api/azure-stack/
   - name: Azure CLI
-    href: /cli/azure/reference-index?view=azure-cli-latest
+    href: /cli/azure/reference-index
 - name: Related
   items:
   - name: Azure Stack Hub user documentation

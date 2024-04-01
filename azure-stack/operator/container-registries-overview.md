@@ -1,10 +1,10 @@
 ---
 title: Azure Container Registry on Azure Stack Hub overview 
 description: Learn the differences between Azure Container Registry on Azure and Azure Container Registry on Azure Stack Hub
-author: mattbriggs
+author: sethmanheim
 ms.topic: article
 ms.date: 10/26/2021
-ms.author: mabrigg
+ms.author: sethm
 ms.reviewer: chasat
 ms.lastreviewed: 10/26/2021
 
@@ -32,7 +32,7 @@ A local container registry enables users to manage a local repository of images 
 Features included with ACR on Azure Stack Hub include:
 
 -   OCI artifact repository for adding Helm charts, Singularity support, and new OCI artifact-supported formats.
--   Integrated security with Azure Active Directory (Azure AD) authentication or Azure Active Directory Federated Services (AD FS), and role-based access control.
+-   Integrated security with Microsoft Entra authentication or Microsoft Entra ID Federated Services (AD FS), and role-based access control.
 -   Webhooks for triggering events when actions occur in one of your registry repositories.
 
 ## ACR on Azure and ACR on Azure Stack Hub

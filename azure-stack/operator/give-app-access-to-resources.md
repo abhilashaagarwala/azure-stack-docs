@@ -1,17 +1,15 @@
 ---
 title: Give an app access to Azure Stack Hub resources
 description: Learn how to give an app access to Azure Stack Hub resources
-author: BryanLa
-ms.author: bryanla
+author: sethmanheim
+ms.author: sethm
 ms.topic: how-to
-ms.date: 11/11/2021
-ms.lastreviewed: 11/11/2021
-ms.custom: contperf-fy22q1
+ms.date: 03/18/2022
+ms.lastreviewed: 03/18/2022
 zone_pivot_groups: state-connected-disconnected
 
-# Intent: As an Azure Stack operator, I want to give an app to access Azure Stack Hub resources. 
+# Intent: As an Azure Stack operator, I want to give an app to access Azure Stack Hub resources.
 # Keyword: azure stack hub app access resources
-
 ---
 # Give an app access to Azure Stack Hub resources
 
@@ -34,7 +32,7 @@ Running an app under its own identity is preferable to running it under the user
 
 You start by creating a new app registration in your directory, which creates an associated [service principal object](/azure/active-directory/develop/developer-glossary#service-principal-object) to represent the app's identity within the directory. The registration process varies depending on the directory you chose for your Azure Stack Hub instance:
 
-- **Azure Active Directory (Azure AD)**: Azure AD is a multi-tenant, cloud-based, directory and identity management service. You can use Azure AD with a connected Azure Stack Hub instance. The examples presented later will use the Azure portal for Azure AD app registration.
+- **Microsoft Entra ID**: Microsoft Entra ID is a multi-tenant, cloud-based, directory and identity management service. You can use Microsoft Entra ID with a connected Azure Stack Hub instance. The examples presented later will use the Azure portal for Microsoft Entra app registration.
 - **Active Directory Federation Services (AD FS)**: AD FS provides simplified, secured identity federation, and web single sign-on (SSO) capabilities. You can use AD FS with both connected and disconnected Azure Stack Hub instances. The examples presented later will use Azure Stack Hub PowerShell for AD FS app registration.
 
 After registering the app you learn how to assign it to a role, limiting its resource access.
@@ -44,16 +42,19 @@ After registering the app you learn how to assign it to a role, limiting its res
 ::: zone-end
 
 ::: zone pivot="state-connected"
-## Manage an Azure AD app
 
-If you deployed Azure Stack Hub with Azure AD as your identity management service, you create and manage identities for apps just like you do for Azure. This section shows you how to perform the steps using the Azure portal. Review [Permissions required for registering an app](/azure/active-directory/develop/howto-create-service-principal-portal#permissions-required-for-registering-an-app) before beginning, to make sure you have sufficient permissions to register an app.
+<a name='manage-an-azure-ad-app'></a>
 
-### <a name="create-app-registration-client-secret-aad"></a>Create an app registration that uses a client secret credential
+## Manage a Microsoft Entra app
 
-In this section, you register your app in your Azure AD tenant using the Azure portal. In following example, you specify a client secret credential, but the portal also supports X509 certificate-based credentials.
+If you deployed Azure Stack Hub with Microsoft Entra ID as your identity management service, you create and manage identities for apps just like you do for Azure. This section shows you how to perform the steps using the Azure portal. Review [Permissions required for registering an app](/azure/active-directory/develop/howto-create-service-principal-portal#permissions-required-for-registering-an-app) before beginning, to make sure you have sufficient permissions to register an app.
+
+### Create an app registration that uses a client secret credential
+
+In this section, you register your app in your Microsoft Entra tenant using the Azure portal. In following example, you specify a client secret credential, but the portal also supports X509 certificate-based credentials.
 
 1. Sign in to the [Azure portal](https://portal.azure.com) using your Azure account.
-2. Select **Azure Active Directory** > **App registrations** > **New registration**.
+2. Select **Microsoft Entra ID** > **App registrations** > **New registration**.
 3. Provide a **name** for the app.
 4. Select the appropriate **Supported account types**.
 5. Under **Redirect URI**, select **Web**  as the app type, and (optionally) specify a redirect URI if your app requires it.
@@ -66,7 +67,18 @@ In this section, you register your app in your Azure AD tenant using the Azure p
 
     ![Saved key in client secrets](./media/give-app-access-to-resources/create-client-secret.png)
 
-Now proceed to [Assign a role](#assign-a-role) to learn how to establish role-based access control for the app's identity.
+Proceed to [Assign a role](#assign-a-role) to learn how to establish role-based access control for the app's identity. 
+
+<a name='additional-azure-ad-app-management-articles'></a>
+
+### Additional Microsoft Entra app management articles
+
+See the following Azure articles for more details on managing Microsoft Entra apps:
+
+- [More details on registering a Microsoft Entra app](/azure/active-directory/develop/quickstart-register-app), including how to create an app registration that uses a certificate credential.
+- How to [Remove an app registration](/azure/active-directory/develop/howto-remove-app).
+- How to [Restore or remove a recently deleted app registration](/azure/active-directory/develop/howto-restore-app).
+
 ::: zone-end
 
 ## Manage an AD FS app
@@ -106,7 +118,7 @@ Once you have a certificate, use the PowerShell script below to register your ap
     # To use a managed certificate from the certificate store, use the Get-Item cmdlet.
     # To use a certificate file, use Get-Certificate for a .cer file, or Get-PfxCertificate for a .pfx file.
     # To use a test certificate, use the New-SelfSignedCertificate cmdlet
-    #   See https://docs.microsoft.com/powershell/module/pki/new-selfsignedcertificate for usage details, including using the -Provider parameter
+    #   See https://learn.microsoft.com/powershell/module/pki/new-selfsignedcertificate for usage details, including using the -Provider parameter
     #   $Cert = New-SelfSignedCertificate -CertStoreLocation "cert:\CurrentUser\My" -Subject "CN=<YourAppName>" -KeySpec KeyExchange
     $Cert = Get-Item "<YourCertificateLocation>"
     
@@ -166,7 +178,7 @@ Keep your PowerShell console session open, as you use it with the `ApplicationId
     # To use a managed certificate from the certificate store, use the Get-Item cmdlet.
     # To use a certificate file, use Get-Certificate for a .cer file, or Get-PfxCertificate for a .pfx file.
     # To use a self-signed test certificate, use the New-SelfSignedCertificate cmdlet
-    #   See https://docs.microsoft.com/powershell/module/pki/new-selfsignedcertificate for usage details, including using the -Provider parameter
+    #   See https://learn.microsoft.com/powershell/module/pki/new-selfsignedcertificate for usage details, including using the -Provider parameter
     #   $Cert = New-SelfSignedCertificate -CertStoreLocation "cert:\CurrentUser\My" -Subject "CN=<YourAppName>" -KeySpec KeyExchange
     $Cert = Get-Item "<YourCertificateLocation>"
    
@@ -236,7 +248,7 @@ Update the certificate credential using PowerShell, substituting your own values
      $Session = New-PSSession -ComputerName "<PepVM>" -ConfigurationName PrivilegedEndpoint -Credential $Creds -SessionOption (New-PSSessionOption -Culture en-US -UICulture en-US)
 
      # Create a self-signed certificate for testing purposes, using the New-SelfSignedCertificate cmdlet 
-     # See https://docs.microsoft.com/powershell/module/pki/new-selfsignedcertificate for usage details, including using the -Provider parameter
+     # See https://learn.microsoft.com/powershell/module/pki/new-selfsignedcertificate for usage details, including using the -Provider parameter
      $NewCert = New-SelfSignedCertificate -CertStoreLocation "cert:\CurrentUser\My" -Subject "CN=<YourAppName>" -KeySpec KeyExchange
      # In production, use Get-Item to retrieve a managed certificate from the certificate store.
      # Alteratively, use Get-Certificate for a .cer file, or Get-PfxCertificate for a .pfx file.
@@ -450,7 +462,7 @@ Access to Azure resources by users and apps is authorized through Role-Based Acc
 
 The type of resource you choose also establishes the *access scope* for the app. You can set the access scope at the subscription, resource group, or resource level. Permissions are inherited to lower levels of scope. For example, adding an app to the "Reader" role for a resource group, means it can read the resource group and any resources it contains.
 
-1. Sign in to the appropriate portal, based on the directory you specified during Azure Stack Hub installation (the Azure portal for Azure AD, or the Azure Stack Hub user portal for AD FS, for example). In this example, we show a user signed in to the Azure Stack Hub user portal.
+1. Sign in to the appropriate portal, based on the directory you specified during Azure Stack Hub installation (the Azure portal for Microsoft Entra ID, or the Azure Stack Hub user portal for AD FS, for example). In this example, we show a user signed in to the Azure Stack Hub user portal.
 
    > [!NOTE]
    > To add role assignments for a given resource, your user account must belong to a role that declares the `Microsoft.Authorization/roleAssignments/write` permission. For example, either the [Owner](/azure/role-based-access-control/built-in-roles#owner) or [User Access Administrator](/azure/role-based-access-control/built-in-roles#user-access-administrator) built-in roles.  
@@ -461,7 +473,7 @@ The type of resource you choose also establishes the *access scope* for the app.
 3. Select the **Access Control (IAM)** page, which is universal across all resources that support RBAC.
 4. Select **+ Add**
 5. Under **Role**, pick the role you wish to assign to the app.
-6. Under **Select**, search for your app using a full or partial Application Name. During registration, the Application Name is generated as *Azurestack-\<YourAppName\>-\<ClientId\>*. For example, if you used an application name of *App2*, and ClientId *2bbe67d8-3fdb-4b62-87cf-cc41dd4344ff* was assigned during creation, the full name would be  *Azurestack-App2-2bbe67d8-3fdb-4b62-87cf-cc41dd4344ff*. You can search for either the exact string, or a portion, like *Azurestack* or *Azurestack-App2*.
+6. Under **Select**, search for your app using a full or partial Application Name. During registration, the Application Name is generated as *Azurestack-\<YourAppName\>-\<GUID\>*. For example, if you used an application name of *App2*, and GUID *2bbe67d8-3fdb-4b62-87cf-cc41dd4344ff* was assigned during creation, the full name would be *Azurestack-App2-2bbe67d8-3fdb-4b62-87cf-cc41dd4344ff*. You can search for either the exact string, or a portion, like *Azurestack* or *Azurestack-App2*.
 7. Once you find the app, select it and it will show under **Selected members**.
 8. Select **Save** to finish assigning the role.
 
@@ -476,5 +488,5 @@ Now that you've given your app an identity and authorized it for resource access
 ## Next steps
 
 [Manage user permissions](azure-stack-manage-permissions.md)  
-[Azure Active Directory Documentation](/azure/active-directory)  
+[Microsoft Entra Documentation](/azure/active-directory)  
 [Active Directory Federation Services](/windows-server/identity/active-directory-federation-services)

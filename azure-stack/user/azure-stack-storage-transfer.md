@@ -1,17 +1,19 @@
 ---
 title: Use data transfer tools in Azure Stack Hub Storage 
 description: Learn about Azure Stack Hub Storage data transfer tools.
-author: BryanLa
+author: sethmanheim
 
 ms.topic: conceptual
+ms.custom:
+  - devx-track-azurepowershell
+  - devx-track-azurecli
 ms.date: 11/22/2020
-ms.author: bryanla
+ms.author: sethm
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/22/2020
 
 # Intent: As an Azure Stack user, I want to learn about data transfer tools for Azure Stack Storage so I can transfer data to and from Azure Stack.
 # Keyword: Azure stack storage data transfer
-
 ---
 
 # Use data transfer tools in Azure Stack Hub Storage
@@ -73,7 +75,7 @@ In AzCopy 10.1, the following features are supported for Azure Stack Hub:
 |Synchronize file|Synchronize a container to a local file system<br>Synchronize a local file system to a container
 
    > [!NOTE]
-   > * Azure Stack Hub doesn't support providing authorization credentials to AzCopy by using Azure Active Directory (AD). You must access storage objects on Azure Stack Hub using a Shared Access Signature (SAS) token.
+   > * Azure Stack Hub doesn't support providing authorization credentials to AzCopy by using Microsoft Entra ID. You must access storage objects on Azure Stack Hub using a Shared Access Signature (SAS) token.
    > * Azure Stack Hub doesn't support synchronous data transfer between two Azure Stack Hub blob locations, and between Azure Storage and Azure Stack Hub. You can't use "azcopy cp" to move data from Azure Stack Hub to Azure Storage (or the other way around) directly with AzCopy 10.1.
 
 ### AzCopy command examples for data transfer

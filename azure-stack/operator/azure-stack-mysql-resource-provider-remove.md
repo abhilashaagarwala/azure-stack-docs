@@ -1,10 +1,10 @@
 ---
 title: Remove the MySQL resource provider in Azure Stack Hub 
 description: Learn how to remove the MySQL resource provider from your Azure Stack Hub deployment.
-author: bryanla
+author: sethmanheim
 ms.topic: article
 ms.date: 1/22/2020
-ms.author: bryanla
+ms.author: sethm
 ms.reviewer: jiadu
 ms.lastreviewed: 09/26/2021
 
@@ -45,7 +45,7 @@ Removing the SQL resource provider will not delete:
 4. Run the DeployMySqlProvider.ps1 script using the following parameters:
    - **Uninstall**: Removes the resource provider and all associated resources.
    - **PrivilegedEndpoint**: The IP address or DNS name of the privileged endpoint.
-   - **AzureEnvironment**: The Azure environment used for deploying Azure Stack Hub. Required only for Azure AD deployments.
+   - **AzureEnvironment**: The Azure environment used for deploying Azure Stack Hub. Required only for Microsoft Entra deployments.
    - **CloudAdminCredential**: The credential for the cloud administrator, necessary to access the privileged endpoint.
    - **AzCredential**: The credential for the Azure Stack Hub service admin account. Use the same credentials that you used for deploying Azure Stack Hub. The script will fail if the account you use with AzCredential requires multi-factor authentication (MFA).
 

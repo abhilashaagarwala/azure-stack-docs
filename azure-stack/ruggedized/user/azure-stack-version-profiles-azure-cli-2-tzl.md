@@ -2,19 +2,15 @@
 title: Manage Azure Stack Hub with Azure CLI | Microsoft Docs
 description: Learn how to use the cross-platform command-line interface (CLI) to manage and deploy resources on Azure Stack Hub.
 services: azure-stack
-documentationcenter: ''
-author: mattbriggs
+author: sethmanheim
 manager: femila
-
 ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 2/1/2021
-ms.author: mabrigg
+ms.author: sethm
 ms.reviewer: raymondl
-ms.lastreviewed: 1/9/2020
+ms.lastreviewed: 1/9/2020 
+ms.custom: devx-track-azurecli
 
 ---
 # Manage and deploy resources to Azure Stack Hub with Azure CLI
@@ -56,9 +52,11 @@ You should see the version of Azure CLI and other dependent libraries that are i
 ![Azure CLI on Azure Stack Hub Python location](media/azure-stack-version-profiles-azure-cli-2/cli-python-location.png)
 
 
-## Windows/Linux (Azure AD)
+<a name='windowslinux-azure-ad'></a>
 
-This section walks you through setting up CLI if you're using Azure AD as your identity management service, and are using CLI on a Windows/Linux machine.
+## Windows/Linux (Microsoft Entra ID)
+
+This section walks you through setting up CLI if you're using Microsoft Entra ID as your identity management service, and are using CLI on a Windows/Linux machine.
 
 ### Connect to Azure Stack Hub
 

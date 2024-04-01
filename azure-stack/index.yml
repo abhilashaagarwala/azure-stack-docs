@@ -1,16 +1,16 @@
 ### YamlMime:Hub
 title: Azure Stack documentation 
-summary: Azure Stack is a family of products and solutions that extend Azure to your datacenter or the edge. Includes Azure Stack Hub, Azure Stack HCI, and Azure Stack Edge.
+summary: Azure Stack is a family of products including Azure Stack HCI, Azure Stack Hub, and Azure Stack Edge. These products, along with other services such as Azure Kubernetes Service (AKS), allow you to build better solutions and extend Azure to your datacenter or to the edge, processing data closer to the source.
 brand: azure
 
 metadata:
   title: Azure Stack documentation 
-  description: Azure Stack is a family of products and solutions that extend Azure to your datacenter or the edge. Includes Azure Stack Hub, Azure Stack HCI, and Azure Stack Edge.
+  description: Azure Stack is a family of products including Azure Stack HCI, Azure Stack Hub, and Azure Stack Edge. These products, along with other services such as Azure Kubernetes Service (AKS), allow you to build better solutions and extend Azure to your datacenter or to the edge, processing data closer to the source.
   ms.service: azure-stack
   ms.topic: hub-page
-  author: BryanLa
-  ms.author: bryanla
-  ms.date: 08/12/2021
+  author: ronmiab
+  ms.author: robess
+  ms.date: 11/13/2023
   ms.custom: e2e-hybrid
 
 # highlightedContent section (optional)
@@ -21,70 +21,57 @@ highlightedContent:
     # Card
     - title: Azure Stack family announcement
       itemType: overview
-      url: http://aka.ms/AzsFamAnnounce
-    - title: Comparing the Azure Stack family of products and solutions
-      itemType: overview
-      url: ./operator/compare-azure-azure-stack.md
+      url: http://aka.ms/ashciignite2023
+    - title: Azure Stack training
+      itemType: learn
+      url: https://learn.microsoft.com/training/modules/intro-to-azure-stack/
 
 # productDirectory section (optional)
 productDirectory:
   items:
+  - title: Azure Stack HCI
+    imageSrc: media/index/azure-stack-hci-2022.svg
+    links:
+      - url: ./hci/overview.md
+        text: Azure Stack HCI overview
+      - url: ./hci/whats-new.md
+        text: Azure Stack HCI What's New
+      - url: ./hci/deploy/deployment-introduction.md
+        text: Try version 23H2
+      - url: https://azure.microsoft.com/en-us/pricing/details/azure-stack/hci/
+        text: Product information and pricing
+  - title: Azure Kubernetes Service (AKS) enabled by Azure Arc
+    imageSrc: media/index/kubernetes-services.svg
+    links:
+      - url: /azure/aks/hybrid/aks-overview
+        text: AKS Arc overview  
+      - url: /azure/aks/hybrid/aks-hci-network-system-requirements
+        text: AKS system requirements                
+      - url: /azure/aks/hybrid/aks-edge-overview
+        text: AKS Edge Essentials overview
+      - url: https://azure.microsoft.com/pricing/details/azure-stack/aks-hci/
+        text: Product information and pricing
   - title: Azure Stack Hub 
-    imageSrc: media/index/azure-stack-hub.svg
+    imageSrc: media/index/azure-stack-hub-2022.svg
     links:
       - url: ./operator/azure-stack-overview.md
         text: Azure Stack Hub overview
       - url: ./operator/index.yml
-        text: Operator documentation
+        text: Azure Stack Hub Operator documentation
       - url: ./user/index.yml
-        text: User documentation
-      - url: ./asdk/index.yml
-        text: ASDK documentation
+        text: Azure Stack Hub User documentation
       - url: https://azure.microsoft.com/products/azure-stack/hub/
-        text: Product overview and purchasing info
+        text: Product information and pricing            
   - title: Azure Stack Edge
-    imageSrc: media/index/azure-stack-edge.svg
+    imageSrc: media/index/azure-stack-edge-2022.svg
     links:
+      - url: /azure/databox-online/azure-stack-edge-pro-2-overview
+        text: Azure Stack Edge Pro 2 overview
       - url: /azure/databox-online/azure-stack-edge-gpu-overview
-        text: What is Azure Stack Edge Pro GPU?
+        text: Azure Stack Edge Pro GPU overview
       - url: /azure/databox-online/azure-stack-edge-pro-r-overview
-        text: What is Azure Stack Edge Pro R?
+        text: Azure Stack Edge Pro R overview
       - url: /azure/databox-online/azure-stack-edge-mini-r-overview
-        text: What is Azure Stack Edge Mini R?                    
-      - url: /azure/databox-online/data-box-edge-overview
-        text: What is Azure Stack Edge Pro FPGA?
+        text: Azure Stack Edge Mini R overview                    
       - url: https://azure.microsoft.com/products/azure-stack/edge/
-        text: Product overview and purchasing info       
-  - title: Azure Stack HCI
-    imageSrc: media/index/azure-stack-hci.svg
-    links:
-      - url: ./hci/overview.md
-        text: Azure Stack HCI overview
-      - url: https://hcicatalog.azurewebsites.net
-        text: Azure Stack HCI catalog
-      - url: ./hci/deploy/deployment-quickstart.md
-        text: Create an Azure Stack HCI cluster
-      - url: ./hci/get-started.md
-        text: Use Azure Stack HCI with Windows Admin Center
-      - url: ./hci/faq.yml
-        text: Azure Stack HCI FAQ
-      - url: https://azure.microsoft.com/products/azure-stack/hci/
-        text: Product overview and purchasing info        
-  - title: Azure Kubernetes Service on Azure Stack HCI
-    imageSrc: media/index/kubernetes-services.svg
-    links:
-      - url: ./aks-hci/overview.md
-        text: AKS on Azure Stack HCI overview  
-      - url: ./aks-hci/system-requirements.md
-        text: System requirements                 
-      - url: https://azure.microsoft.com/en-us/products/azure-stack/hci/aks-download/
-        text: Register for evaluation download 
-      - url: https://azure.microsoft.com/pricing/details/azure-stack/aks-hci/
-        text: Product overview and purchasing info
-  - title: Hybrid and multicloud resources
-    imageSrc: media/index/hybrid-icon-32.svg
-    links:
-      - url: /hybrid
-        text: Hybrid hub
-      - url: /hybrid/app-solutions/
-        text: Hybrid and multicloud patterns and solutions documentation 
+        text: Product information and pricing

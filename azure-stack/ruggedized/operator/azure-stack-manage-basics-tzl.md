@@ -2,10 +2,10 @@
 title: Azure Stack Hub administration basics - Ruggedized
 titleSuffix: Azure Stack Hub
 description: Learn the basics to Azure Stack Hub administration.
-author: PatAltimore
+author: sethmanheim
 ms.topic: article
 ms.date: 06/16/2020
-ms.author: patricka
+ms.author: sethm
 ms.reviewer: thoroet
 ms.lastreviewed: 06/16/2020
 
@@ -55,12 +55,12 @@ Azure Stack Hub will continue to add support for Azure services. For the project
 
 ## What account should I use?
 
-There are a few account considerations to be aware of when managing Azure Stack Hub. This is especially true in deployments using Windows Server Active Directory Federation Services (AD FS) as the identity provider instead of Azure Active Directory (Azure AD).
+There are a few account considerations to be aware of when managing Azure Stack Hub. This is especially true in deployments using Windows Server Active Directory Federation Services (AD FS) as the identity provider instead of Microsoft Entra ID.
 
 | **Account** | **Azure** | **AD FS** |
 |---|---|---|
 | Local administrator (.\Administrator) |   |
-| Azure AD global administrator | Used during installation. <br> Owner of the default provider | Not applicable. |
+| Microsoft Entra Global Administrator | Used during installation. <br> Owner of the default provider | Not applicable. |
 | Account for Extended Storage|   |   |
 ||
 
@@ -80,16 +80,16 @@ If you want to test your plans, offers, and services, you can use the [user port
 
 In addition to providing services, you must do the regular duties of an operator to keep Azure Stack Hub up and running. These duties include the following tasks:
 
-- Add user accounts for [Azure AD](../../operator/azure-stack-add-new-user-aad.md) deployment.
+- Add user accounts for [Microsoft Entra ID](../../operator/azure-stack-add-new-user-aad.md) deployment.
 - [Set access permissions using role-based access control](../../operator/azure-stack-manage-permissions.md). (This task isn't restricted to admins.)
 - [Monitor infrastructure health](../../operator/azure-stack-monitor-health.md).
 - Manage [network](../../operator/azure-stack-viewing-public-ip-address-consumption.md) and [storage](../../operator/azure-stack-manage-storage-accounts.md) resources.
 - [Start and stop Azure Stack Hub](../../operator/azure-stack-start-and-stop.md).
 - [Operating the extended storage](../../user/azure-stack-network-howto-extend-datacenter.md).
-- [Manage Event Hub](../../operator/event-hubs-rp-overview.md?bc=%2fazure-stack%2fbreadcrumb%2ftoc.json&branch=release-tzl&toc=%2fazure-stack%2ftdc%2ftoc.json).
-- [Manage App Service](../../operator/azure-stack-app-service-overview.md?bc=%2fazure-stack%2fbreadcrumb%2ftoc.json&branch=release-tzl&toc=%2fazure-stack%2ftdc%2ftoc.json).
+- [Manage Event Hub](../../operator/event-hubs-rp-overview.md?bc=/azure-stack/breadcrumb/toc.json&branch=release-tzl&toc=/azure-stack/tdc/toc.json).
+- [Manage App Service](../../operator/azure-stack-app-service-overview.md?bc=/azure-stack/breadcrumb/toc.json&branch=release-tzl&toc=/azure-stack/tdc/toc.json).
 - Replace bad hardware. Here is the list of [replaceable parts](../../operator/azure-stack-replace-component.md).
-- [Get support](../../operator/azure-stack-help-and-support-overview.md?bc=%2fazure-stack%2fbreadcrumb%2ftoc.json&branch=release-tzl&toc=%2fazure-stack%2ftdc%2ftoc.json).
+- [Get support](../../operator/azure-stack-help-and-support-overview.md?bc=/azure-stack/breadcrumb/toc.json&branch=release-tzl&toc=/azure-stack/tdc/toc.json).
 
 ## Operator tasks
 

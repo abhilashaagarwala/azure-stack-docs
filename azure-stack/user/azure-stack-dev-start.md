@@ -2,10 +2,10 @@
 
 title: Set up a development environment in Azure Stack Hub  
 description: Get started developing applications for Azure Stack Hub.  
-author: BryanLa 
+author: sethmanheim 
 ms.topic: overview 
 ms.date: 12/2/2020
-ms.author: bryanla 
+ms.author: sethm 
 ms.reviewer: thoroet 
 ms.lastreviewed: 12/2/2020
 
@@ -67,7 +67,7 @@ Before you begin setting up your environment, you need:
 
 - Access to the Azure Stack Hub user portal. 
 - The name of your tenant. 
-- To determine whether you're using Azure Active Directory (Azure AD) or Active Directory Federation Services (AD FS), as your identity manager. 
+- To determine whether you're using Microsoft Entra ID or Active Directory Federation Services (AD FS), as your identity manager. 
 
 If you have any questions about Azure Stack Hub, contact your cloud operator. 
 

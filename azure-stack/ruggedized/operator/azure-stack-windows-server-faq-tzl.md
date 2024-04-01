@@ -2,15 +2,9 @@
 title: Azure Stack Windows Server related FAQs | Microsoft Docs
 description: List of Azure Stack Marketplace FAQs for Windows Server
 services: azure-stack
-documentationcenter: ''
 author: sethmanheim
 manager: femila
-editor: ''
-
 ms.service: azure-stack
-ms.workload: tzl
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/13/2021
 ms.author: sethm
@@ -25,13 +19,13 @@ This article answers some frequently asked questions about Windows Server images
 
 ## What are the licensing options for Windows Server Marketplace images on Azure Stack?
 
-Users of the Azure Stack Hub ruggedized and MDC are entitled to free usage of Windows Server as a guest operating system.
-
 Microsoft offers two versions of Windows Server images through the Azure Stack marketplace. Only one version of this image can be used in any given Azure Stack environment at the same time.
 
 - **Pay as you use**: These images should not be used on Azure Stack Hub ruggedized or MDC.
 
 - **Bring Your Own License (BYOL)**: These images can be used on Azure Stack Hub ruggedized and MDC.
+
+Users of 1P Azure Stack Hub appliances including Azure Stack Hub Ruggedized (ASH-R) and the Azure Modular Data Center (MDC) can leverage their existing entitlements through Enterprise Agreements (EAs) or Bring Your Own License (BYOL) to license Windows Server guests on Azure Stack Hub. As part of the 1P Azure Stack Hub offering, Microsoft allows the customer to use the appliance for as long as the customer has an active subscription to the service, which use includes but is not limited to, use of the hardware, hardware support, and basic software infrastructure services (i.e., storage, compute, including virtual machines and containers). Windows Server guest licenses are not included with the service.
 
 ## What about other VMs that use Windows Server, such as SQL Server?
 

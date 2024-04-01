@@ -1,10 +1,10 @@
 ---
 title: Change settings on your Azure Stack Hub switch configuration 
 description: Learn what settings you can change on your Azure Stack Hub switch configuration.
-author: PatAltimore
+author: sethmanheim
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.author: patricka
+ms.author: sethm
 ms.reviewer: wamota
 ms.lastreviewed: 11/11/2019
 
@@ -47,7 +47,7 @@ The operator can configure either RADIUS or TACACS to manage authentication on t
 > [!NOTE]
 > Starting in 1910, the deployment worksheet will have a new field for **Permitted Networks** which replaces the manual steps required to allow access to network device management interfaces and the hardware lifecycle host (HLH) from a trusted datacenter network range. For more information on this new feature, see [Network integration planning for Azure Stack Hub](azure-stack-network.md#permitted-networks).
 
-The operator can change some access control lists (ACL)s to allow access to network device management interfaces and the hardware lifecycle host (HLH) from a trusted datacenter network range. With the access control list, the operator can allow their management jumpbox VMs within a specific network range to access the switch management interface, the HLH OS, and the HLH BMC.
+The operator can change some access control lists (ACL)s to allow access to network device management interfaces and the hardware lifecycle host (HLH) from a trusted datacenter network range. With the access control list, the operator can allow their management jumpbox VMs within a specific network range to access the switch management interfaces and the HLH OS.
 
 ## Next steps
 

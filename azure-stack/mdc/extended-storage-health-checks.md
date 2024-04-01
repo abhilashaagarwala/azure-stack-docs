@@ -2,18 +2,12 @@
 title: Azure Stack - Health checks in extended storage for Modular Data Center blob storage
 description: This article provides guidance for how to perform health checks in the extended storage for the Modular Data Center blob storage.
 services: azure-stack
-documentationcenter: ''
-author: PatAltimore
+author: sethmanheim
 manager: femila
-editor: ''
-
 ms.service: azure-stack
-ms.workload: app-service
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/01/2020
-ms.author: patricka
+ms.author: sethm
 ms.reviewer: karlt
 ms.lastreviewed: 10/01/2020 
 

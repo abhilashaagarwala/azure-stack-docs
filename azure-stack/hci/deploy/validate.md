@@ -4,12 +4,16 @@ description: Understand cluster validation's importance, and when to run it on a
 author: jasongerend
 ms.author: jgerend
 ms.topic: article
-ms.date: 11/05/2021
+ms.date: 02/09/2024
 ---
 
 # Validate an Azure Stack HCI cluster
 
->Applies to: Azure Stack HCI, versions 21H2 and 20H2; Windows Server 2022, Windows Server 2019
+> Applies to: Azure Stack HCI, versions 22H2 and 21H2; Windows Server 2022, Windows Server 2019.
+
+[!INCLUDE [warning-22h2](../../includes/hci-warning-deploy-22h2.md)]
+
+Validate DCB is no longer the recommended tool to set up or test your host networking configuration on Azure Stack HCI. We recommend using Network ATC to configure your host networking set-up for Azure Stack HCI. Network ATC always supersedes Validate DCB on Azure Stack HCI.  
 
 Although the Create cluster wizard in Windows Admin Center performs certain validations to create a working cluster with the selected hardware, cluster validation performs additional checks to make sure the cluster will work in a production environment. This how-to article focuses on why cluster validation is important, and when to run it on an Azure Stack HCI cluster.
 
@@ -27,7 +31,7 @@ Cluster validation is intended to catch hardware or configuration problems befor
 This section describes scenarios in which validation is also needed or useful.
 
 - **Validation before the cluster is configured:**
-  - **A set of servers ready to become a failover cluster:** This is the most straightforward validation scenario. The hardware components (systems, networks, and storage) are connected, but the systems aren't yet functioning as a cluster. Running tests in this situation has no affect on availability.
+  - **A set of servers ready to become a failover cluster:** This is the most straightforward validation scenario. The hardware components (systems, networks, and storage) are connected, but the systems aren't yet functioning as a cluster. Running tests in this situation has no effect on availability.
  
   - **Server VMs:** For virtualized servers in a cluster, run cluster validation as you would on any other new cluster. The requirement to run the feature is the same whether you have:
     - A "host cluster" where failover occurs between two physical computers.
@@ -78,7 +82,7 @@ To install and run the Validate-DCB tool:
 1. On the Welcome to the Validate-DCB configuration wizard page, select **Next**.
 1. On the Clusters and Nodes page, type the name of the server cluster that you want to validate, select **Resolve** to list it on the page, and then select **Next**.
 
-    :::image type="content" source="../media/validate/clusters-and-nodes.png" alt-text="The Clusters and Nodes page of the Validate-DCB configuration wizard":::
+    :::image type="content" source="../media/validate/clusters-and-nodes.png" alt-text="The Clusters and Nodes page of the Validate-DCB configuration wizard" lightbox="../media/validate/clusters-and-nodes.png":::
 
 1. On the Adapters page:
    1. Select the **vSwitch attached** checkbox and type the name of the vSwitch.
@@ -97,11 +101,11 @@ To install and run the Validate-DCB tool:
     > [!NOTE]
     > Selecting RDMA over RoCE on the previous wizard page requires DCB for network reliability on all NICs and switchports.
 
-1. On the Save and Deploy page, in the **Configuration File Path** box, save the configuration file using a .ps1 extension to a location where you can use it again later if needed, and then select **Export** to start running the Validate-DCB tool.
+1. On the Save and Deploy page, in the **Configuration File Path** box, save the configuration file using *.ps1* extension to a location where you can use it again later if needed, and then select **Export** to start running the Validate-DCB tool.
 
-   - You can optionally deploy your configuration file by completing the **Deploy Configuration to Nodes** section of the page, which includes the ability to use an Azure Automation account to deploy the configuration and then validate it. See [Create an Azure Automation account](/azure/automation/automation-quickstart-create-account) to get started with Azure Automation.
+   - You can optionally deploy your configuration file by completing the **Deploy Configuration to Nodes** section of the page, which includes the ability to use an Azure Automation account to deploy the configuration and then validate it. See [Create an Azure Automation account](/azure/automation/quickstarts/create-azure-automation-account-portal) to get started with Azure Automation.
 
-    :::image type="content" source="../media/validate/save-and-deploy.png" alt-text="The Save and Deploy page of the Validate-DCB configuration wizard":::
+    :::image type="content" source="../media/validate/save-and-deploy.png" alt-text="The Save and Deploy page of the Validate-DCB configuration wizard" lightbox="../media/validate/save-and-deploy.png":::
 
 ### Review results and fix errors
 The Validate-DCB tool produces results in two units:
@@ -110,24 +114,24 @@ The Validate-DCB tool produces results in two units:
 
 This example shows successful scan results of a single server for all prerequisites and modal unit tests by indicating a Failed Count of 0.
 
-:::image type="content" source="../media/validate/global-unit-and-modal-unit-results.png" alt-text="Validate-DCB Global unit and Modal unit test results":::
+:::image type="content" source="../media/validate/global-unit-and-modal-unit-results.png" alt-text="Validate-DCB Global unit and Modal unit test results" lightbox="../media/validate/global-unit-and-modal-unit-results.png":::
 
 The following steps show how to identify a Jumbo Packet error from vNIC SMB02 and fix it:
 1. The results of the Validate-DCB tool scans show a Failed Count error of 1.
 
-    :::image type="content" source="../media/validate/failed-count-error-1.png" alt-text="Validate-DCB tool scan results showing a a Failed Count error of 1":::
+    :::image type="content" source="../media/validate/failed-count-error-1.png" alt-text="Validate-DCB tool scan results showing a a Failed Count error of 1" lightbox="../media/validate/failed-count-error-1.png":::
 
 1. Scrolling back through the results shows an error in red indicating that the Jumbo Packet for vNIC SMB02 on Host S046036 is set at the default size of 1514, but should be set to 9014.
 
-    :::image type="content" source="../media/validate/jumbo-packet-setting-error.png" alt-text="Validate-DCB tool scan result showing a jumbo packet size setting error":::
+    :::image type="content" source="../media/validate/jumbo-packet-setting-error.png" alt-text="Validate-DCB tool scan result showing a jumbo packet size setting error" lightbox="../media/validate/jumbo-packet-setting-error.png":::
 
 1. Reviewing the **Advanced** properties of vNIC SMB02 on Host S046036 shows that the Jumbo Packet is set to the default of **Disabled**.
 
-    :::image type="content" source="../media/validate/hyper-v-advanced-properties-jumbo-packet-setting.png" alt-text="The Server host's Hyper-V Advanced properties Jumbo Packet setting":::
+    :::image type="content" source="../media/validate/hyper-v-advanced-properties-jumbo-packet-setting.png" alt-text="The Server host's Hyper-V Advanced properties Jumbo Packet setting" lightbox="../media/validate/hyper-v-advanced-properties-jumbo-packet-setting.png":::
 
 1. Fixing the error requires enabling the Jumbo Packet feature and changing its size to 9014 bytes. Running the scan again on host S046036 confirms this change by returning a Failed Count of 0.
 
-    :::image type="content" source="../media/validate/jumbo-packet-error-fix-confirmation.png" alt-text="Validate-DCB scan results confirming that the Server host's Jumbo Packet setting is fixed":::
+    :::image type="content" source="../media/validate/jumbo-packet-error-fix-confirmation.png" alt-text="Validate-DCB scan results confirming that the Server host's Jumbo Packet setting is fixed" lightbox="../media/validate/jumbo-packet-error-fix-confirmation.png":::
 
 To learn more about resolving errors that the Validate-DCB tool identifies, see the following video.
 
@@ -148,7 +152,7 @@ Use the following steps to validate the servers in an existing cluster in Window
 1. On the **Inventory** page, select the servers in the cluster, then expand the **More** submenu and select **Validate cluster**.
 1. On the **Validate Cluster** pop-up window, select **Yes**.
 
-    :::image type="content" source="../media/validate/validate-cluster-pop-up.png" alt-text="Validate Cluster pop-up window":::
+    :::image type="content" source="../media/validate/validate-cluster-pop-up.png" alt-text="Validate Cluster pop-up window" lightbox="../media/validate/validate-cluster-pop-up.png":::
 
 1. On the **Credential Security Service Provider (CredSSP)** pop-up window, select **Yes**.
 1. Provide your credentials to enable **CredSSP** and then select **Continue**.<br> Cluster validation runs in the background and gives you a notification when it's complete, at which point you can view the validation report, as described in the next section.
@@ -192,7 +196,8 @@ For more examples and usage information, see the [Test-Cluster](/powershell/modu
 [Test-NetStack](https://github.com/microsoft/Test-NetStack) is a PowerShell-based testing tool available from GitHub that you can use to perform ICMP, TCP, and RDMA traffic testing of networks and identify potential network fabric and host misconfigurations or operational instability. Use Test-NetStack to validate network data paths by testing native, synthetic, and hardware offloaded (RDMA) network data paths for issues with connectivity, packet fragmentation, low throughput, and congestion.
 
 ## Validate replication for Storage Replica
-If you're using Storage Replica to replicate volumes in a stretched cluster or cluster-to-cluster, there are there are several events and cmdlets that you can use to get the state of replication. 
+
+If you're using Storage Replica to replicate volumes in a stretched cluster or cluster-to-cluster, there are several events and cmdlets that you can use to get the state of replication.
 
 In the following scenario, we configured Storage Replica by creating replication groups (RGs) for two sites, and then specified the data volumes and log volumes for both the source server nodes in Site1 (Server1, Server2), and the destination (replicated) server nodes in Site2 (Server3, Server4).
 

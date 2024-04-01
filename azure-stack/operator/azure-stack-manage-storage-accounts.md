@@ -1,11 +1,11 @@
 ---
 title: Manage Azure Stack Hub storage accounts 
 description: Learn how to find, manage, recover, and reclaim Azure Stack Hub storage accounts.
-author: PatAltimore
+author: sethmanheim
 
 ms.topic: how-to
 ms.date: 03/04/2020
-ms.author: patricka
+ms.author: sethm
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/19/2019
 
@@ -162,7 +162,7 @@ You can also use PowerShell to explicitly override the retention period and imme
     Start-AzsReclaimStorageCapacity -FarmName $farm_name
 ```
 
-For more information, see [Azure Stack Hub PowerShell documentation](/powershell/azure/azure-stack/overview).
+For more information, see [Azure Stack Hub PowerShell documentation](/powershell/azurestackhub/overview).
  
 
 ## Next steps

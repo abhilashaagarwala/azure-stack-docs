@@ -1,10 +1,10 @@
 ---
 title: Azure Container Registries on Azure Stack Hub overview 
 description: Learn about the differences between Azure and Azure Stack Hub with Azure Container Registries.
-author: mattbriggs
+author: sethmanheim
 ms.topic: article
 ms.date: 10/26/2021
-ms.author: mabrigg
+ms.author: sethm
 ms.reviewer: chasat
 ms.lastreviewed: 10/26/2021
 
@@ -40,7 +40,7 @@ Azure Stack Hub support for ACR compared to ACR on Azure:
 | Docker registry              | Yes          | Yes                       |
 | Helm support                 | Yes          | Yes                       |
 | OCI support                  | Yes          | Yes                       |
-| Identity & Access Management | Azure AD     | Azure AD/AD FS            |
+| Identity & Access Management | Microsoft Entra ID     | Microsoft Entra / AD FS            |
 | RBAC                         | Registry     | Registry                  |
 | Remote Repository (Mirror)   | No           | No                        |
 | OSS Vulnerability Scanning   | Yes          | No                        |

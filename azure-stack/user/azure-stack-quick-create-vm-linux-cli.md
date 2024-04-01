@@ -1,23 +1,22 @@
 ---
 title: Create Linux VM with Azure CLI in Azure Stack Hub 
 description: Create a Linux virtual machine by using the Azure CLI in Azure Stack Hub.
-author: BryanLa
+author: sethmanheim
 
 ms.topic: quickstart
-ms.date: 2/1/2021
-ms.author: bryanla
-ms.lastreviewed: 01/14/2019
+ms.date: 03/12/2024
+ms.author: sethm
 
 # Intent: As an Azure Stack user, I want to create a Linux server virtual machine using Azure CLI.
 # Keyword: linux virtual machine CLI
 
-ms.custom: mode-api
+ms.custom: mode-api, devx-track-azurecli
 ---
 
 
 # Quickstart: Create a Linux server VM by using the Azure CLI in Azure Stack Hub
 
-You can create an Ubuntu Server 16.04 LTS virtual machine (VM) by using the Azure CLI. In this article, you create and use a virtual machine. This article also shows you how to:
+You can create an Ubuntu Server 20.04 LTS virtual machine (VM) by using the Azure CLI. In this article, you create and use a virtual machine. This article also shows you how to:
 
 * Connect to the virtual machine with a remote client.
 * Install an NGINX web server and view the default home page.
@@ -27,7 +26,7 @@ You can create an Ubuntu Server 16.04 LTS virtual machine (VM) by using the Azur
 
 * A Linux image in the Azure Stack Hub Marketplace
 
-   The Azure Stack Hub Marketplace doesn't contain a Linux image by default. Have the Azure Stack Hub operator provide the Ubuntu Server 16.04 LTS image you need. The operator can use the instructions in [Download Marketplace items from Azure to Azure Stack Hub](../operator/azure-stack-download-azure-marketplace-item.md).
+   The Azure Stack Hub Marketplace doesn't contain a Linux image by default. Have the Azure Stack Hub operator provide the Ubuntu Server 20.04 LTS image you need. The operator can use the instructions in [Download Marketplace items from Azure to Azure Stack Hub](../operator/azure-stack-download-azure-marketplace-item.md).
 
 * Azure Stack Hub requires a specific version of the Azure CLI to create and manage its resources. If you don't have the Azure CLI configured for Azure Stack Hub, sign in to the [Azure Stack Development Kit](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp) (or a Windows-based external client if you're [connected through VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn)), and follow the instructions for [installing and configuring the Azure CLI](azure-stack-version-profiles-azurecli2.md).
 
@@ -35,7 +34,7 @@ You can create an Ubuntu Server 16.04 LTS virtual machine (VM) by using the Azur
 
 ## Create a resource group
 
-A resource group is a logical container where you can deploy and manage Azure Stack Hub resources. From your development kit or the Azure Stack Hub integrated system, run the [az group create](/cli/azure/group#az_group_create) command to create a resource group.
+A resource group is a logical container where you can deploy and manage Azure Stack Hub resources. From your development kit or the Azure Stack Hub integrated system, run the [az group create](/cli/azure/group#az-group-create) command to create a resource group.
 
 > [!NOTE]
 > We've assigned values for all variables in the following code examples. However, you can assign your own values.
@@ -48,7 +47,7 @@ az group create --name myResourceGroup --location local
 
 ## Create a virtual machine
 
-Create a virtual machine by using the [az vm create](/cli/azure/vm#az_vm_create) command. The following example creates a VM named myVM. The example uses *Demouser* as the admin username and *Demouser@123* as the admin password. Change these values to something that's appropriate for your environment.
+Create a virtual machine by using the [az vm create](/cli/azure/vm#az-vm-create) command. The following example creates a VM named myVM. The example uses *Demouser* as the admin username and *Demouser@123* as the admin password. Change these values to something that's appropriate for your environment.
 
 ```azurecli
 az vm create \

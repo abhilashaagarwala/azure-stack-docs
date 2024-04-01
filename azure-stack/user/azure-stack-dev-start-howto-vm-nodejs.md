@@ -1,18 +1,16 @@
 ---
-title: Deploy Node.js app to VM in Azure Stack Hub 
+title: Deploy Node.js app to VM in Azure Stack Hub
 description: Deploy an Node.js app to Azure Stack Hub.
-author: BryanLa
+author: sethmanheim
 
 ms.topic: how-to
 ms.date: 8/20/2021
-ms.author: bryanla
+ms.author: sethm
 ms.reviewer: thoroet
 ms.lastreviewed: 8/20/2021
-ms.custom: contperf-fy22q1
 
 # Intent: Notdone: As a < type of user >, I want < what? > so that < why? >
 # Keyword: Notdone: keyword noun phrase
-
 ---
 
 

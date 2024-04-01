@@ -1,8 +1,8 @@
 ---
 title:  Deploy a graphic processing unit (GPU) enabled IoT Module on Azure Stack Hub
 description: How to deploy a graphic processing unit (GPU) enabled IoT Module on Azure Stack Hub
-author: BryanLa
-ms.author: bryanla
+author: sethmanheim
+ms.author: sethm
 ms.service: azure-stack
 ms.topic: how-to
 ms.date: 8/20/2021
@@ -18,7 +18,7 @@ ms.lastreviewed: 8/20/2021
 
 With a GPU-enabled Azure Stack Hub, you can deploy processor-intensive modules to Linux devices running at the IoT Edge. GPU optimized VM sizes are specialized VMs available with single or multiple NVIDIA GPUs. In this article, learn to use GPU optimized VMs to run compute-intensive, graphics-intensive, and visualization workloads.
 
-Before you start, you will need an Azure Active Directory (Azure AD) subscription with access to global Azure and Azure Stack Hub, an Azure Container Registry (ACR), and an IoT hub.
+Before you start, you will need a Microsoft Entra subscription with access to global Azure and Azure Stack Hub, an Azure Container Registry (ACR), and an IoT hub.
 
 In this article, you:
   - Install an GPU-enabled Linux VM and install the correct drivers.
@@ -33,7 +33,7 @@ You'll need to have the following resources in place in your Azure Stack Hub ins
 
 ### Azure Stack Hub and Azure
 
-  - A subscription as a user using Azure Active Directory (Azure AD) in an Azure Stack Hub Integrated System with an NVIDA GPU. The following chips work with iOT Hub:
+  - A subscription as a user using Microsoft Entra ID in an Azure Stack Hub Integrated System with an NVIDA GPU. The following chips work with iOT Hub:
     - NCv3
     - NCas_v4
 
@@ -52,11 +52,11 @@ You'll need to have the following resources in place in your Azure Stack Hub ins
   - Your development machine will need the following resources:
       - [Python 3.x](https://www.python.org/downloads/)
       - [Pip](https://pypi.org/project/pip/) for installing Python packages. This is been installed with your Python installation. If you have Pip installed, you may want to upgrade to the latest version. You can upgrade using pip, itself. Type: `pip install --upgrade pip`.
-      - [Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest)
+      - [Azure CLI 2.0](/cli/azure/install-azure-cli)
       - [Git](https://git-scm.com/downloads)
       - [Docker](https://docs.docker.com/get-docker/)
       - [Visual Studio Code](https://code.visualstudio.com/)
-      - [Azure IoT Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) for Visual Studio Code
+      - [Azure IoT Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit) for Visual Studio Code
       - [Python Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack) for Visual Studio Code
 
 ## Register an IoT Edge device

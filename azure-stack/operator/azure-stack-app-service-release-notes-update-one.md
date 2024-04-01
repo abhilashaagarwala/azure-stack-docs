@@ -1,7 +1,7 @@
 ---
-title: App Service on Azure Stack Hub Update 1 release notes 
+title: App Service on Azure Stack Hub Update 1 release notes
 description: Learn about improvements, fixes, and known issues in Update 1 for App Service on Azure Stack Hub.
-author: bryanla
+author: sethmanheim
 manager: stefsch
 
 ms.topic: article
@@ -9,12 +9,10 @@ ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 08/20/2019
-ms.custom: contperf-fy22q1
 ROBOTS: NOINDEX
 
 # Intent: As an Azure Stack operator, I want to know the release notes for Azure App Service on Azure Stack Update 1.
 # Keyword: app service update 1 azure stack
-
 ---
 
 # App Service on Azure Stack Hub Update 1 release notes
